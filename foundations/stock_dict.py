@@ -15,3 +15,10 @@ def get_stock_name(symbol):
     for k, v in stock_dict.items():
         if symbol == k:
             return v
+
+
+
+def detailed_history_report():
+    for purchase in purchases:
+        print('${} of {} stock was bought on {}.'.format(purchase[1] * purchase[3], get_stock_name(purchase[0]), purchase[2]))
+

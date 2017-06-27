@@ -22,3 +22,18 @@ def detailed_history_report():
     for purchase in purchases:
         print('${} of {} stock was bought on {}.'.format(purchase[1] * purchase[3], get_stock_name(purchase[0]), purchase[2]))
 
+def full_history_report():
+    full_report = dict()
+    for purchase in purchases:
+        if purchase[0] in full_report:
+            full_report[purchase[0]] += purchase[1] * purchase[3]
+        else:
+            full_report[purchase[0]] = purchase[1] * purchase[3]
+
+    print(full_report)
+
+
+
+
+detailed_history_report()
+full_history_report()
